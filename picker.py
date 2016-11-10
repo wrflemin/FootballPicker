@@ -75,7 +75,7 @@ class Picker(object):
 
 	def get_spread_index(self, line):
 		for i, word in enumerate(line):
-			if word.startswith('-'):
+			if word.startswith('-') or word.startswith('PK'):
 				return i
 		raise Exception('No spread line. Example line is: 10/2 1:00 ET At Washington -9 Cleveland')
 
