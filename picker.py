@@ -13,7 +13,7 @@ class Picker(object):
 		self.base_url = 'http://api.wunderground.com/api/{0}/almanac/q/{1},{2}.json'
 
 	def help(self):
-		return "usage: python picker.py filename.txt secretApiKeyFile.txt"
+		return "usage: python picker.py fileWithPicksInside.txt secretApiKeyFile.txt"
 	
 	def pick(self, filename, api_secret_filename):
 		f = open(filename, 'r')
@@ -77,7 +77,7 @@ class Picker(object):
 		for i, word in enumerate(line):
 			if word.startswith('-') or word.startswith('PK'):
 				return i
-		raise Exception('No spread line. Example line is: 10/2 1:00 ET At Washington -9 Cleveland')
+		print 'line,"'+line+'" has mo spread line. Example line is: 10/2 1:00 ET At Washington -9 Cleveland'
 
 if __name__ == "__main__":
 	picker = Picker()
