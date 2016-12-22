@@ -9,7 +9,7 @@ class Picker(object):
 	def __init__(self):
 		self.line_reg_ex = '(.*\d\d)( ET | AM )(At)?(.*)'
 		self.at = 'At'
-		self.geolocator = Nominatim()
+		self.geolocator = Nominatim(timeout=15)
 		self.base_url = 'http://api.wunderground.com/api/{0}/almanac/q/{1},{2}.json'
 
 	def help(self):
