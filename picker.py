@@ -75,9 +75,9 @@ class Picker(object):
 
 	def get_spread_index(self, line):
 		for i, word in enumerate(line):
-			if word.startswith('-') or word.startswith('PK'):
+			if word.startswith('-') or word.startswith('PK') or word.startswith('Off'):
 				return i
-		print 'line,"'+line+'" has mo spread line. Example line is: 10/2 1:00 ET At Washington -9 Cleveland'
+		print 'line,"{0}" has no spread line. Example line is: 10/2 1:00 ET At Washington -9 Cleveland'.format(line)
 
 if __name__ == "__main__":
 	picker = Picker()
